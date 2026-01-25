@@ -3,21 +3,22 @@ public class Book {
     private int totalBook;
     private int availableBook;
 
-    public Book(String title,int totalBook) {
+    public Book(String title, int totalBook) {
         this.title = title;
         this.totalBook = totalBook;
         this.availableBook = totalBook;
     }
 
-    public Book(String title){
+    public Book(String title) {
         this.title = title;
         this.totalBook = 0;
-        this.availableBook = totalBook;
+        this.availableBook = 0;
     }
-    public Book(){
+
+    public Book() {
         this.title = "";
         this.totalBook = 0;
-        this.availableBook = totalBook;
+        this.availableBook = 0;
     }
 
     public String getTitle() {
@@ -31,12 +32,16 @@ public class Book {
     public int getAvailableBook() {
         return availableBook;
     }
-    public void borrowBook(){
-        if(availableBook >0)
-            totalBook -= 1;
+
+    public void borrowBook() {
+        if (availableBook > 0) {
+            availableBook -= 1;
+        }
     }
-    public void returnBook(){
-        if(availableBook<totalBook)
+
+    public void returnBook() {
+        if (availableBook < totalBook) {
             availableBook += 1;
+        }
     }
 }
