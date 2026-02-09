@@ -43,6 +43,7 @@ public class CakeOrder2 {
 
         System.out.println("Press 1 to order Birthday Cake");
         System.out.println("Press 2 to order Cup Cake");
+        System.out.println("Press 3 to order Eclair");
         System.out.print("Enter an option: ");
         int option = sc.nextInt();
         sc.nextLine();
@@ -67,7 +68,19 @@ public class CakeOrder2 {
             CupCake order = new CupCake(piece, flavor, 70.0);
             System.out.println("\n" + order.toString());
 
-        } else {
+        }else if (option == 3) {
+            // Eclairs
+            String flavor = selectFlavor();
+            System.out.print("Enter filling (Vanilla, Matcha, Thai Tea): ");
+            String eFilling = sc.nextLine();
+            System.out.print("How many pieces: ");
+            int eAmount = sc.nextInt();
+
+
+            Eclairs order = new Eclairs(eFilling,eAmount, flavor, 15.0);
+            System.out.println("\n" + order.toString());
+
+        }else {
             System.out.println("\nWrong option!! Try again!!");
         }
 
