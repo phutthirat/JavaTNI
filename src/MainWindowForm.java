@@ -98,7 +98,7 @@ public class MainWindowForm extends JFrame{
         if (id == null) return;
         Product p = management.findProduct(id);
         if (p == null) {
-            JOptionPane.showMessageDialog(null,"Product not found");
+            JOptionPane.showMessageDialog(null,"Product not found","Error",JOptionPane.ERROR_MESSAGE);
             return;
         }
         JOptionPane.showMessageDialog(null,
